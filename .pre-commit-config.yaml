@@ -1,0 +1,17 @@
+default_language_version:
+    python: python3.10
+
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black pretty_match tests
+        language: python
+        types: [python]
+
+      - id: isort
+        name: isort
+        entry: isort pretty_match tests
+        language: python
+        types: [python]
