@@ -4,8 +4,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: ["Test"]
+    branches: [main]
+    types:
+      - completed
 
 
 jobs:
@@ -34,4 +37,4 @@ jobs:
             PYPI_USERNAME:  ${{ secrets.PYPI_USERNAME }}
             PYPI_PASSWORD : ${{ secrets.PYPI_PASSWORD }}
         run:
-          poetry publsih  --username $PYPI_USERNAME --password  $PYPI_PASSWORD
+          poetry publish  --username $PYPI_USERNAME --password  $PYPI_PASSWORD

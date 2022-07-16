@@ -1,8 +1,8 @@
 import pytest
 
 from pretty_match import results
-from pretty_match.comparable import Number
 from pretty_match.typing import Result
+from pretty_match.comparable import Number
 
 
 @pytest.mark.parametrize(
