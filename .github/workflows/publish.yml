@@ -2,13 +2,10 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
-  workflow_run:
-    workflows: ["Test"]
-    branches: [main]
-    types:
-      - completed
+    tags:
+      - v*.*.*
+
+
 
 
 jobs:
@@ -37,4 +34,4 @@ jobs:
             PYPI_USERNAME:  ${{ secrets.PYPI_USERNAME }}
             PYPI_PASSWORD : ${{ secrets.PYPI_PASSWORD }}
         run:
-          poetry publish  --username $PYPI_USERNAME --password  $PYPI_PASSWORD
+          poetry publish  --username $PYPI_USERNAME --password  $PYPI_PASSWORD --build
