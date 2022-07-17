@@ -1,7 +1,7 @@
 from typing import Optional
 
 from pretty_match import results
-from pretty_match.attrs import AttrIsNone, FirstNoneAttr
+from pretty_match.attrs import AttrIsNot, AttrIsNone, FirstNotAttr, FirstNoneAttr
 from pretty_match.comparable import Number
 
 
@@ -24,6 +24,10 @@ class Query:
         self.token = token
         self.start = start
         self.end = end
+
+    @property
+    def is_valid(self) -> bool:
+        return False
 
 
 def process_transaction(user: User, product: Product) -> None:
@@ -50,3 +54,11 @@ if __name__ == "__main__":
             print("start required!")
         case AttrIsNone(name="end"):
             print("end required!")
+
+    query = Query(token="test", start=None, end=2)
+    attrs_to_check = ["token", "is_valid"]
+    match FirstNotAttr(*attrs_to_check, instance=query):
+        case AttrIsNot(name="token"):
+            print("token required!")
+        case AttrIsNot(name="is_valid"):
+            print("Query is not valid!")
