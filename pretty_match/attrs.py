@@ -17,10 +17,10 @@ class AttrIsNot:
         self.name = name
 
     def __str__(self):
-        return f"<FirstNotAttr: {self.name}>"
+        return f"<AttrIsNot: {self.name}>"
 
     def __repr__(self):
-        return f"<FirstNotAttr: {self.name}>"
+        return f"<AttrIsNot: {self.name}>"
 
     def __eq__(self, other):
         return other.name == self.name
