@@ -1,4 +1,19 @@
-# pretty-match
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/50069473/179423541-5c3510a0-0000-47f4-af16-9266003728d1.png">
+</p>
+
+<h1 align="center">
+ 🪄 🌟 pretty-match 
+</h1>
+<p align="center">
+  <a href="https://github.com/skonik/pretty-match/actions/workflows/test.yml">
+    <img alt="Test" src="https://github.com/skonik/pretty-match/actions/workflows/test.yml/badge.svg">
+  </a>
+  <a href="https://github.com/skonik/pretty-match" target="_blank">
+    <img src="https://img.shields.io/badge/python-3.10-blue" alt="python">
+  </a>
+</p>
+
 A set of utils to be used with match-case statements.
 
 ```python
